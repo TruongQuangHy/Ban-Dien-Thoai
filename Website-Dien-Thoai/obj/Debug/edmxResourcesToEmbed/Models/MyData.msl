@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DienThoaiModelStoreContainer" CdmEntityContainer="DienThoaiEntities">
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="DienThoaiModel.ChiTietDonHang">
+        <MappingFragment StoreEntitySet="ChiTietDonHang">
+          <ScalarProperty Name="madon" ColumnName="madon" />
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="DienThoaiModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="madon" ColumnName="madon" />
+          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
+          <ScalarProperty Name="giaohang" ColumnName="giaohang" />
+          <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+          <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="DienThoaiModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="DienThoaiModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="maTH" ColumnName="maTH" />
+          <ScalarProperty Name="tenSP" ColumnName="tenSP" />
+          <ScalarProperty Name="hinh" ColumnName="hinh" />
+          <ScalarProperty Name="giaban" ColumnName="giaban" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="soluongton" ColumnName="soluongton" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThuongHieux">
+      <EntityTypeMapping TypeName="DienThoaiModel.ThuongHieu">
+        <MappingFragment StoreEntitySet="ThuongHieu">
+          <ScalarProperty Name="maTH" ColumnName="maTH" />
+          <ScalarProperty Name="tenTH" ColumnName="tenTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
