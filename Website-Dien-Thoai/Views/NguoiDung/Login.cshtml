@@ -1,0 +1,40 @@
+﻿@model Website_Dien_Thoai.Models.KhachHang
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="login-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>E-mail / Username</label>
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-6">
+                                <label>Password</label>
+                                @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-12">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="newaccount">
+                                    <label class="custom-control-label" for="newaccount">Keep me signed in</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" value="Login" class="btn btn-default" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

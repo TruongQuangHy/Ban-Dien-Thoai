@@ -9,7 +9,7 @@ namespace Website_Dien_Thoai.Controllers
 {
     public class ProducttController : Controller
     {
-        DienThoaiEntities db = new DienThoaiEntities();
+        DienThoaiEntities7 db = new DienThoaiEntities7();
         public ActionResult ListProduct()
         {
             //lấy danh sách sản phẩm

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DienThoaiModelStoreContainer" CdmEntityContainer="DienThoaiEntities">
+  <EntityContainerMapping StorageEntityContainer="DienThoaiModelStoreContainer" CdmEntityContainer="DienThoaiEntities7">
     <EntitySetMapping Name="ChiTietDonHangs">
       <EntityTypeMapping TypeName="DienThoaiModel.ChiTietDonHang">
         <MappingFragment StoreEntitySet="ChiTietDonHang">
@@ -23,20 +23,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KhachHangs">
-      <EntityTypeMapping TypeName="DienThoaiModel.KhachHang">
-        <MappingFragment StoreEntitySet="KhachHang">
-          <ScalarProperty Name="makh" ColumnName="makh" />
-          <ScalarProperty Name="hoten" ColumnName="hoten" />
-          <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
-          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="diachi" ColumnName="diachi" />
-          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
-          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SanPhams">
       <EntityTypeMapping TypeName="DienThoaiModel.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
@@ -56,6 +42,21 @@
         <MappingFragment StoreEntitySet="ThuongHieu">
           <ScalarProperty Name="maTH" ColumnName="maTH" />
           <ScalarProperty Name="tenTH" ColumnName="tenTH" />
+          <ScalarProperty Name="hinh" ColumnName="hinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="DienThoaiModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

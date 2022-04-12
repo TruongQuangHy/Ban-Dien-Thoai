@@ -13,10 +13,10 @@ namespace Website_Dien_Thoai.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DienThoaiEntities : DbContext
+    public partial class DienThoaiEntities7 : DbContext
     {
-        public DienThoaiEntities()
-            : base("name=DienThoaiEntities")
+        public DienThoaiEntities7()
+            : base("name=DienThoaiEntities7")
         {
         }
     
@@ -27,8 +27,8 @@ namespace Website_Dien_Thoai.Models
     
         public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
-        public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<ThuongHieu> ThuongHieux { get; set; }
+        public virtual DbSet<KhachHang> KhachHangs { get; set; }
     }
 }

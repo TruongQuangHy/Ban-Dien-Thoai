@@ -21,8 +21,8 @@ namespace Website_Dien_Thoai.Models
         }
     
         public int makh { get; set; }
-        public string hoten { get; set; }
-        public string tendangnhap { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string matkhau { get; set; }
         public string email { get; set; }
         public string diachi { get; set; }

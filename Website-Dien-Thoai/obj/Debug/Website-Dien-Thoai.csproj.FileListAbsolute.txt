@@ -1,3 +1,4 @@
+F:\Website-Dien-Thoai\Website-Dien-Thoai\obj\Debug\Website-Dien-Thoai.csproj.CoreCompileInputs.cache
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Website-Dien-Thoai.dll.config
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Website-Dien-Thoai.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Website-Dien-Thoai.pdb
@@ -51,9 +52,13 @@ F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\roslyn\vbc.rsp
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\roslyn\VBCSCompiler.exe
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\roslyn\VBCSCompiler.exe.config
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Antlr3.Runtime.dll
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.dll
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.SqlServer.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Microsoft.Web.Infrastructure.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Newtonsoft.Json.dll
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.dll
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.Mvc.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.Helpers.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.Mvc.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.Optimization.dll
@@ -62,6 +67,10 @@ F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.WebPages.Deployment.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.WebPages.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.WebPages.Razor.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\WebGrease.dll
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.xml
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.SqlServer.xml
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.xml
+F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.Mvc.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.Helpers.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.Mvc.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.Optimization.xml
@@ -72,15 +81,6 @@ F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Web.WebPages.Razor.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Newtonsoft.Json.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Antlr3.Runtime.pdb
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\Website-Dien-Thoai\Website-Dien-Thoai\obj\Debug\Website-Dien-Thoai.csproj.CoreCompileInputs.cache
 F:\Website-Dien-Thoai\Website-Dien-Thoai\obj\Debug\Website-Dien-Thoai.dll
 F:\Website-Dien-Thoai\Website-Dien-Thoai\obj\Debug\Website-Dien-Thoai.pdb
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.dll
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.SqlServer.dll
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.xml
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\EntityFramework.SqlServer.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\obj\Debug\Website-Dien-Thoai.csproj.AssemblyReference.cache
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.dll
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.Mvc.dll
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.xml
-F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\PagedList.Mvc.xml

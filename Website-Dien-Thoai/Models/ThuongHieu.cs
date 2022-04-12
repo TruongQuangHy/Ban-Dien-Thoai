@@ -22,6 +22,7 @@ namespace Website_Dien_Thoai.Models
     
         public int maTH { get; set; }
         public string tenTH { get; set; }
+        public string hinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SanPham> SanPhams { get; set; }

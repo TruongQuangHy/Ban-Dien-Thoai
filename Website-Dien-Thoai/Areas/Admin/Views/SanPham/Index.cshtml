@@ -1,0 +1,79 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Website_Dien_Thoai.Models.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List Product</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "SanPham", FormMethod.Get))
+            {
+                <p>
+                    Search Product: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string )
+                    <input type="submit" value="Tìm kiếm" />
+                </p>
+            }
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().hinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().giaban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ngaycapnhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().soluongton)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().mota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ThuongHieu.tenTH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaban)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngaycapnhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluongton)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThuongHieu.tenTH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.maSP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.maSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.maSP })
+        </td>
+    </tr>
+}
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber ) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))

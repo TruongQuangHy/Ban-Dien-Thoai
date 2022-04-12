@@ -9,7 +9,7 @@ namespace Website_Dien_Thoai.Controllers
 {
     public class CategoryController : Controller
     {
-        DienThoaiEntities db = new DienThoaiEntities();
+        DienThoaiEntities7 db = new DienThoaiEntities7();
         // GET: Category
         public ActionResult Index()
         {
