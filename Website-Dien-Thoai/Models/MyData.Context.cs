@@ -28,7 +28,7 @@ namespace Website_Dien_Thoai.Models
         public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
-        public virtual DbSet<ThuongHieu> ThuongHieux { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<ThuongHieu> ThuongHieux { get; set; }
     }
 }

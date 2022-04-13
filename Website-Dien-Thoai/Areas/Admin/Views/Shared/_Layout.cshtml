@@ -39,19 +39,20 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto">
-                        <a href="~/Areas/Admin/Views/Home/Index" class="nav-item nav-link active">Home</a>
+                        <a href="@Url.Action("Index", "Home")" class="nav-item nav-link active">Home</a>
                         @*@Html.ActionLink( "Home", "Index", "Home")*@
-                        <a href="~/Areas/Admin/Views/SanPham/Index" class="nav-item nav-link">List Product</a>
+                        <a href="@Url.Action("Index", "SanPham") " class="nav-item nav-link">List Product</a>
+                        <a href="@Url.Action("lstthuonghieu", "ThuongHieu") " class="nav-item nav-link">List Product</a>
                         @*<a href="/Productt/Detail" class="nav-item nav-link">Product Detail</a>
-                        <a href="/Cart/Index" class="nav-item nav-link">Cart</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
-                            <div class="dropdown-menu">
-                                <a href="wishlist.html" class="dropdown-item">Wishlist</a>
-                                
+        <a href="/Cart/Index" class="nav-item nav-link">Cart</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
+            <div class="dropdown-menu">
+                <a href="wishlist.html" class="dropdown-item">Wishlist</a>
 
-                            </div>
-                        </div>*@
+
+            </div>
+        </div>*@
                     </div>
                     <div class="navbar-nav ml-auto">
                         <div class="nav-item dropdown">

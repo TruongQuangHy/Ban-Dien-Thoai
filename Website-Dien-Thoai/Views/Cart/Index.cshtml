@@ -3,7 +3,30 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script type="text/javascript">
+    $(function () {
+        $("#removecart").click(function () {
+            var model = {};
+            //lấy id sản phẩm
+            model.Id = $("#productid").val();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Remove", "Cart")',
+                data:  JSON.stringify(model) ,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    $('#CartCount').text(@Session["count"] - 1);
+                    $("#product-" + model.Id).remove();
+                },
+                error: function () {
+                    alert("Lỗi trong khi thêm vào giỏ hàng!");
+                }
+            });
+            return false;
+        });
+    });
+</script>
 <!-- Breadcrumb Start -->
 <div class="breadcrumb-wrap">
     <div class="container-fluid">
@@ -37,24 +60,29 @@
                                 {
                                     foreach(var item in Model)
                                     {
-                                        <tr>
-                                            <td>
-                                                <div class="img">
-                                                    <a href="#"><img src="~/Content/img/@item.SanPham.hinh" alt="Image"></a>
-                                                    <p>@item.SanPham.tenSP</p>
-                                                </div>
-                                            </td>
-                                            <td>@item.SanPham.giaban</td>
-                                            <td>
-                                                <div class="qty">
-                                                    <button class="btn-minus"><i class="fa fa-minus"></i></button>
-                                                    <input type="text" value="@item.Quantity">
-                                                    <button class="btn-plus"><i class="fa fa-plus"></i></button>
-                                                </div>
-                                            </td>
-                                            <td>$99</td>
-                                            <td><button><i class="fa fa-trash"></i></button></td>
-                                        </tr>
+                                <tr id="product-@item.SanPham.maSP">
+                                    <td>
+                                        <div class="img">
+                                            <a href="#"><img src="~/Content/img/@item.SanPham.hinh" alt="Image"></a>
+                                            <p>@item.SanPham.tenSP</p>
+                                        </div>
+                                    </td>
+                                    <td>@item.SanPham.giaban</td>
+                                    <td>
+                                        <div class="qty">
+                                            <button class="btn-minus"><i class="fa fa-minus"></i></button>
+                                            <input type="text" value="@item.Quantity">
+                                            <button class="btn-plus"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </td>
+                                    <td>@item.SanPham.giaban</td>
+                                    <td>
+
+                                    <a href="" class="btn btn-light" id="removecart"> <i class="fa fa-trash"></i></a>
+                                    <input type="hidden" value="@item.SanPham.maSP" id="productid"/>
+                                    </td>
+                                    @*<td><button id="removecart"><i class="fa fa-trash"></i></button></td>*@
+                                </tr>
                                     }
                                 }
                                 else

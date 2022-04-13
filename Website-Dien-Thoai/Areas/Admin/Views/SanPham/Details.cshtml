@@ -8,7 +8,6 @@
 <h2>Details</h2>
 
 <div>
-    <h4>SanPham</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.hinh)
+            <img style="width: 150px" src="~/Content/img/@Model.hinh" />
         </dd>
 
         <dt>
@@ -60,11 +59,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ThuongHieu.tenTH)
+            @Html.DisplayNameFor(model => model.maTH)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ThuongHieu.tenTH)
+            @Html.DisplayFor(model => model.maTH)
         </dd>
 
     </dl>

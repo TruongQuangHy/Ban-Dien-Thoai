@@ -21,10 +21,9 @@ namespace Website_Dien_Thoai.Models
         }
     
         public int madon { get; set; }
-        public Nullable<bool> thanhtoan { get; set; }
-        public Nullable<bool> giaohang { get; set; }
+        public string tendonhang { get; set; }
+        public Nullable<int> tinhtrang { get; set; }
         public Nullable<System.DateTime> ngaydat { get; set; }
-        public Nullable<System.DateTime> ngaygiao { get; set; }
         public Nullable<int> makh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

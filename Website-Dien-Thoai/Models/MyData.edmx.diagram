@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="20fb419714b84acebf8ec9166930084a" Name="Diagram1">
-        <EntityTypeShape EntityType="DienThoaiModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DienThoaiModel.DonHang" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <AssociationConnector Association="DienThoaiModel.FK__ChiTietDo__madon__6FE99F9F" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DienThoaiModel.KhachHang" Width="1.5" PointX="0.75" PointY="5" />
-        <AssociationConnector Association="DienThoaiModel.FK__DonHang__makh__71D1E811" />
-        <EntityTypeShape EntityType="DienThoaiModel.ThuongHieu" Width="1.5" PointX="0.75" PointY="1.625" />
-        <EntityTypeShape EntityType="DienThoaiModel.SanPham" Width="1.5" PointX="3" PointY="0.875" />
-        <AssociationConnector Association="DienThoaiModel.FK__ChiTietDon__maSP__70DDC3D8" />
-        <AssociationConnector Association="DienThoaiModel.FK__SanPham__maTH__7B5B524B" />
-        </Diagram>
+      <Diagram DiagramId="20fb419714b84acebf8ec9166930084a" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="DienThoaiModel.ChiTietDonHang" Width="1.5" PointX="10.5" PointY="2" />
+        <EntityTypeShape EntityType="DienThoaiModel.DonHang" Width="1.5" PointX="8.5" PointY="3.5" />
+        <EntityTypeShape EntityType="DienThoaiModel.KhachHang" Width="1.5" PointX="4.25" PointY="3.375" />
+        <EntityTypeShape EntityType="DienThoaiModel.SanPham" Width="1.5" PointX="6.125" PointY="1.125" />
+        <EntityTypeShape EntityType="DienThoaiModel.ThuongHieu" Width="1.5" PointX="2.625" PointY="1.75" />
+        <AssociationConnector Association="DienThoaiModel.FK__ChiTietDo__madon__0B91BA14" />
+        <AssociationConnector Association="DienThoaiModel.FK__ChiTietDon__maSP__0D7A0286" />
+        <AssociationConnector Association="DienThoaiModel.FK__DonHang__makh__0F624AF8" />
+        <AssociationConnector Association="DienThoaiModel.FK__SanPham__maTH__123EB7A3" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

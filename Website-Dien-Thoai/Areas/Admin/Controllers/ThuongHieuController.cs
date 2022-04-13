@@ -39,21 +39,75 @@ namespace Website_Dien_Thoai.Areas.Admin.Controllers
             listproduct = listproduct.OrderByDescending(m => m.maTH).ToList();
             return View(listproduct.ToPagedList(pageNumber, pageSize));
         }
+        /*[ValidateInput(false)]*/
+        [HttpPost]
+        //-------------Detail-------------------
+        public ActionResult Detail(int id)
+        {
+            var D_theloai = data.ThuongHieux.Where(m => m.maTH == id).First();
+            return View(D_theloai);
+        }
+        //-------------Create-------------------
         [HttpGet]
         public ActionResult Create()
         {
-            var Create_thuonghiue = data.ThuongHieux.ToString();
-            return View(Create_thuonghiue);
+            return View();
         }
-
-        /*[ValidateInput(false)]*/
         [HttpPost]
-
-        public ActionResult Create(ThuongHieu thuongHieu)
+        public ActionResult Create(FormCollection collection, ThuongHieu thuonghieu)
         {
-            data.ThuongHieux.Add(thuongHieu);
+            var ten = collection["tenTH"];
+            if (string.IsNullOrEmpty(ten))
+            {
+                ViewData["Error"] = "Don't empty!";
+            }
+            else
+            {
+                thuonghieu.tenTH = ten;
+                data.ThuongHieux.Add(thuonghieu);
+                data.SaveChanges();
+                return RedirectToAction("lstthuonghieu");
+            }
+            return this.Create();
+        }
+        //-------------Edit-------------------
+        public ActionResult Edit(int id)
+        {
+            var E_category = data.ThuongHieux.First(m => m.maTH == id);
+            return View(E_category);
+        }
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            var theloai = data.ThuongHieux.First(m => m.maTH == id);
+            var E_tenloai = collection["tenloai"];
+            theloai.maTH = id;
+            if (string.IsNullOrEmpty(E_tenloai))
+            {
+                ViewData["Error"] = "Don't empty!";
+            }
+            else
+            {
+                theloai.tenTH = E_tenloai;
+                UpdateModel(theloai);
+                data.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return this.Edit(id);
+        }
+        //-------------Delete-------------------
+        public ActionResult Delete(int id)
+        {
+            var D_theloai = data.ThuongHieux.First(m => m.maTH == id);
+            return View(D_theloai);
+        }
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            var D_theloai = data.ThuongHieux.Where(m => m.maTH == id).First();
+            data.ThuongHieux.Remove(D_theloai);
             data.SaveChanges();
-            return RedirectToAction("lstthuonghieu");
+            return RedirectToAction("Index");
         }
     }
 }

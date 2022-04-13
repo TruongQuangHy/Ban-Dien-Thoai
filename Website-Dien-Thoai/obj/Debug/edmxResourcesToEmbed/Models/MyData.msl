@@ -4,28 +4,28 @@
     <EntitySetMapping Name="ChiTietDonHangs">
       <EntityTypeMapping TypeName="DienThoaiModel.ChiTietDonHang">
         <MappingFragment StoreEntitySet="ChiTietDonHang">
-          <ScalarProperty Name="madon" ColumnName="madon" />
-          <ScalarProperty Name="maSP" ColumnName="maSP" />
-          <ScalarProperty Name="soluong" ColumnName="soluong" />
           <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="maSP" ColumnName="maSP" />
+          <ScalarProperty Name="madon" ColumnName="madon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DonHangs">
       <EntityTypeMapping TypeName="DienThoaiModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
-          <ScalarProperty Name="madon" ColumnName="madon" />
-          <ScalarProperty Name="thanhtoan" ColumnName="thanhtoan" />
-          <ScalarProperty Name="giaohang" ColumnName="giaohang" />
-          <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
-          <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
           <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+          <ScalarProperty Name="tinhtrang" ColumnName="tinhtrang" />
+          <ScalarProperty Name="tendonhang" ColumnName="tendonhang" />
+          <ScalarProperty Name="madon" ColumnName="madon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="KhachHangs">
       <EntityTypeMapping TypeName="DienThoaiModel.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="admin" ColumnName="admin" />
           <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
           <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
           <ScalarProperty Name="diachi" ColumnName="diachi" />
@@ -34,14 +34,6 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="makh" ColumnName="makh" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ThuongHieux">
-      <EntityTypeMapping TypeName="DienThoaiModel.ThuongHieu">
-        <MappingFragment StoreEntitySet="ThuongHieu">
-          <ScalarProperty Name="tenTH" ColumnName="tenTH" />
-          <ScalarProperty Name="maTH" ColumnName="maTH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -56,6 +48,14 @@
           <ScalarProperty Name="tenSP" ColumnName="tenSP" />
           <ScalarProperty Name="maTH" ColumnName="maTH" />
           <ScalarProperty Name="maSP" ColumnName="maSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThuongHieux">
+      <EntityTypeMapping TypeName="DienThoaiModel.ThuongHieu">
+        <MappingFragment StoreEntitySet="ThuongHieu">
+          <ScalarProperty Name="tenTH" ColumnName="tenTH" />
+          <ScalarProperty Name="maTH" ColumnName="maTH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

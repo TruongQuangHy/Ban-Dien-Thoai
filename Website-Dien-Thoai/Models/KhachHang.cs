@@ -28,6 +28,7 @@ namespace Website_Dien_Thoai.Models
         public string diachi { get; set; }
         public string dienthoai { get; set; }
         public Nullable<System.DateTime> ngaysinh { get; set; }
+        public Nullable<int> admin { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }

@@ -11,7 +11,7 @@ namespace Website_Dien_Thoai.Models
 
         public int maSP { get; set; }
         [Required(ErrorMessage = "Bạn hãy nhập đủ thông tin")]
-        [Display(Name ="Thương hiệu")]
+        [Display(Name = "Thương hiệu")]
         public Nullable<int> maTH { get; set; }
         [Display(Name = "Tên sản phẩm")]
         public string tenSP { get; set; }
