@@ -7,14 +7,14 @@
       <Diagram DiagramId="20fb419714b84acebf8ec9166930084a" Name="Diagram1">
         <EntityTypeShape EntityType="DienThoaiModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DienThoaiModel.DonHang" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DienThoaiModel.SanPham" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="DienThoaiModel.FK__ChiTietDo__madon__6FE99F9F" ManuallyRouted="false" />
-        <AssociationConnector Association="DienThoaiModel.FK__ChiTietDon__maSP__70DDC3D8" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DienThoaiModel.KhachHang" Width="1.5" PointX="0.75" PointY="5" />
         <AssociationConnector Association="DienThoaiModel.FK__DonHang__makh__71D1E811" />
         <EntityTypeShape EntityType="DienThoaiModel.ThuongHieu" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="DienThoaiModel.SanPham" Width="1.5" PointX="3" PointY="0.875" />
+        <AssociationConnector Association="DienThoaiModel.FK__ChiTietDon__maSP__70DDC3D8" />
         <AssociationConnector Association="DienThoaiModel.FK__SanPham__maTH__7B5B524B" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

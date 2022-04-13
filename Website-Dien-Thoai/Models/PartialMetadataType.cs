@@ -12,7 +12,7 @@ namespace Website_Dien_Thoai.Models
     {
     }
     [MetadataType(typeof(SanPhamMasterData))]
-    public partial class SanPhamMasterData
+    public partial class SanPham
     {
         [NotMapped]
         public System.Web.HttpPostedFileBase ImageUpload { get; set; }

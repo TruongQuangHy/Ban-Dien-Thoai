@@ -155,3 +155,4 @@ F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Numerics.Vectors.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Runtime.CompilerServices.Unsafe.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Text.Encodings.Web.xml
 F:\Website-Dien-Thoai\Website-Dien-Thoai\bin\System.Threading.Tasks.Extensions.xml
+F:\Website-Dien-Thoai\Website-Dien-Thoai\obj\Debug\Website-Dien-Thoai.csproj.AssemblyReference.cache

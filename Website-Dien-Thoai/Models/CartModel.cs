@@ -8,6 +8,6 @@ namespace Website_Dien_Thoai.Models
     public class CartModel
     {
         public SanPham SanPham { get; set; }
-        public int soluong { get; set; }
+        public int Quantity { get; set; }
     }
 }

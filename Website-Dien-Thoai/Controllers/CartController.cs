@@ -10,18 +10,17 @@ namespace Website_Dien_Thoai.Controllers
     public class CartController : Controller
     {
         DienThoaiEntities7 db = new DienThoaiEntities7();
-
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            return View((List<CartModel>)Session["cart"]);
         }
-        public ActionResult AddToCart(int id, int songluong)
+        public ActionResult AddToCart(int id, int quantity)
         {
             if (Session["cart"] == null)
             {
                 List<CartModel> cart = new List<CartModel>();
-                cart.Add(new CartModel { SanPham = db.SanPhams.Find(id), soluong = songluong });
+                cart.Add(new CartModel { SanPham = db.SanPhams.Find(id), Quantity = quantity });
                 Session["cart"] = cart;
                 Session["count"] = 1;
             }
@@ -33,12 +32,12 @@ namespace Website_Dien_Thoai.Controllers
                 if (index != -1)
                 {
                     //nếu sp tồn tại trong giỏ hàng thì cộng thêm số lượng
-                    cart[index].soluong += songluong;
+                    cart[index].Quantity += quantity;
                 }
                 else
                 {
                     //nếu không tồn tại thì thêm sản phẩm vào giỏ hàng
-                    cart.Add(new CartModel { SanPham = db.SanPhams.Find(id), soluong = songluong });
+                    cart.Add(new CartModel { SanPham = db.SanPhams.Find(id), Quantity = quantity });
                     //Tính lại số sản phẩm trong giỏ hàng
                     Session["count"] = Convert.ToInt32(Session["count"]) + 1;
                 }
@@ -46,6 +45,7 @@ namespace Website_Dien_Thoai.Controllers
             }
             return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
+
         private int isExist(int id)
         {
             List<CartModel> cart = (List<CartModel>)Session["cart"];
