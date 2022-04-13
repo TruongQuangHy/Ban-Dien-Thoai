@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PartialResponse.Core</name>
+    </assembly>
+    <members>
+        <member name="T:PartialResponse.Core.Field">
+            <summary>
+            Represents a field.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.Core.Field.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.Core.Field"/> structure.
+            </summary>
+            <param name="value">The value of the field.</param>
+        </member>
+        <member name="P:PartialResponse.Core.Field.Parts">
+            <summary>
+            Gets the value parts of the field.
+            </summary>
+            <returns>The value parts of the field.</returns>
+        </member>
+        <member name="M:PartialResponse.Core.Field.Matches(System.String[])">
+            <summary>
+            Indicates whether the field matches the specified value.
+            </summary>
+            <param name="parts">The parts to match, which is an array whose elements contain the substrings from the value that are delimited by '/'.</param>
+            <returns>true if the field matches the specified value; otherwise, false.</returns>
+        </member>
+        <member name="M:PartialResponse.Core.Field.Matches(System.String[],System.Boolean)">
+            <summary>
+            Indicates whether the field matches the specified value.
+            </summary>
+            <param name="parts">The parts to match, which is an array whose elements contain the substrings from the value that are delimited by '/'.</param>
+            <param name="ignoreCase">A value which indicates whether matching should be case-insensitive.</param>
+            <returns>true if the field matches the specified value; otherwise, false.</returns>
+        </member>
+        <member name="M:PartialResponse.Core.Field.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="T:PartialResponse.Core.Fields">
+            <summary>
+            Represents a collection of fields.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="P:PartialResponse.Core.Fields.Values">
+            <summary>
+            Gets a collection containing the fields.
+            </summary>
+            <returns>A collection containing the fields</returns>
+        </member>
+        <member name="M:PartialResponse.Core.Fields.TryParse(System.String,PartialResponse.Core.Fields@)">
+            <summary>
+            Converts to value to a <see cref="T:PartialResponse.Core.Fields"/> object.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="result">When this method returns, contains the <see cref="T:PartialResponse.Core.Fields"/> equivalent of the value,
+            if the conversion succeeded, or null if the conversion failed.</param>
+            <returns>true if value was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:PartialResponse.Core.Fields.Matches(System.String)">
+            <summary>
+            Indicates whether a field matches the specified value.
+            </summary>
+            <param name="value">The value to match.</param>
+            <returns>true if a field matches the specified value; otherwise, false.</returns>
+        </member>
+        <member name="M:PartialResponse.Core.Fields.Matches(System.String,System.Boolean)">
+            <summary>
+            Indicates whether a field matches the specified value.
+            </summary>
+            <param name="value">The value to match.</param>
+            <param name="ignoreCase">A value which indicates whether matching should be case-insensitive.</param>
+            <returns>true if a field matches the specified value; otherwise, false.</returns>
+        </member>
+        <member name="T:PartialResponse.Core.Parser">
+            <summary>
+            A parser for fields parameter parsing.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.Core.Parser.#ctor(PartialResponse.Core.ParserContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.Core.Parser"/> class.
+            </summary>
+            <param name="context">A <see cref="T:PartialResponse.Core.ParserContext"/> used by the parser.</param>
+        </member>
+        <member name="M:PartialResponse.Core.Parser.Parse">
+            <summary>
+            Parses the specified value.
+            </summary>
+        </member>
+        <member name="T:PartialResponse.Core.ParserContext">
+            <summary>
+            Contains information used by a <see cref="T:PartialResponse.Core.Parser"/>.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.Core.ParserContext.#ctor(System.IO.TextReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.Core.ParserContext"/> class.
+            </summary>
+            <param name="source">A <see cref="T:System.IO.TextReader"/> representing the input string.</param>
+        </member>
+        <member name="P:PartialResponse.Core.ParserContext.Error">
+            <summary>
+            Gets the error that occured while parsing.
+            </summary>
+            <returns>The error if an error occured while parsing; otherwise, null.</returns>
+        </member>
+        <member name="P:PartialResponse.Core.ParserContext.Source">
+            <summary>
+            Gets the <see cref="T:System.IO.TextReader"/> representing the input string.
+            </summary>
+            <returns>The <see cref="T:System.IO.TextReader"/> representing the input string.</returns>
+        </member>
+        <member name="P:PartialResponse.Core.ParserContext.Values">
+            <summary>
+            Gets the values that are extracted while parsing.
+            </summary>
+            <returns>The values that are extracted while parsing.</returns>
+        </member>
+        <member name="T:PartialResponse.Core.Token">
+            <summary>
+            Represents a token.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.Core.Token.#ctor(System.String,PartialResponse.Core.TokenType,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.Core.Token"/> struct.
+            </summary>
+            <param name="value">The value of the token.</param>
+            <param name="type">The <see cref="T:PartialResponse.Core.TokenType"/> of the token.</param>
+            <param name="position">The start position of the token.</param>
+        </member>
+        <member name="P:PartialResponse.Core.Token.Value">
+            <summary>
+            Gets the value of the token.
+            </summary>
+            <returns>The value of the token.</returns>
+        </member>
+        <member name="P:PartialResponse.Core.Token.Type">
+            <summary>
+            Gets the <see cref="T:PartialResponse.Core.TokenType"/> of the token.
+            </summary>
+            <returns>The <see cref="T:PartialResponse.Core.TokenType"/> of the token.</returns>
+        </member>
+        <member name="P:PartialResponse.Core.Token.Position">
+            <summary>
+            Gets the start position of the token.
+            </summary>
+            <returns>The start position of the token.</returns>
+        </member>
+        <member name="T:PartialResponse.Core.Tokenizer">
+            <summary>
+            A tokenizer for fields parameter tokenization.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.Core.Tokenizer.#ctor(System.IO.TextReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.Core.Tokenizer"/> class.
+            </summary>
+            <param name="source">A <see cref="T:System.IO.TextReader"/> representing the input string.</param>
+        </member>
+        <member name="M:PartialResponse.Core.Tokenizer.NextToken">
+            <summary>
+            Returns the next token from the input string.
+            </summary>
+            <returns>The next token from the input string, or null if the end has been reached.</returns>
+        </member>
+        <member name="T:PartialResponse.Core.TokenType">
+            <summary>
+            Specifies the token types that can be identified and returned by the <see cref="T:PartialResponse.Core.Tokenizer"/>.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.Identifier">
+            <summary>
+            An identifier. Typically, a contiguous run of characters not matching a forward slash, left parenthesis,
+            right parenthesis, comma, or whitespace. For example, 'foo/bar' results in two identifiers; 'foo' and
+            'bar'.
+            </summary>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.ForwardSlash">
+            <summary>
+            A forward slash ('/') delimiter.
+            </summary>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.LeftParenthesis">
+            <summary>
+            An opening parenthesis ('(').
+            </summary>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.RightParenthesis">
+            <summary>
+            A closing parenthesis (')').
+            </summary>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.Comma">
+            <summary>
+            A comma (',') delimiter.
+            </summary>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.WhiteSpace">
+            <summary>
+            A space, horizontal tab, new line, or carriage return. Typically, a contiguous run of whitespace is a
+            single whitespace token. For example, the two spaces in 'foo  bar' result in a single whitespace token.
+            </summary>
+        </member>
+        <member name="F:PartialResponse.Core.TokenType.Eof">
+            <summary>
+            The end of the source has been reached.
+            </summary>
+        </member>
+        <member name="T:PartialResponse.Core.UnexpectedTokenError">
+            <summary>
+            Contains information about an unexpected token.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.Core.UnexpectedTokenError.#ctor(PartialResponse.Core.Token)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.Core.UnexpectedTokenError"/> class.
+            </summary>
+            <param name="token">The unexpected token.</param>
+        </member>
+        <member name="P:PartialResponse.Core.UnexpectedTokenError.Value">
+            <summary>
+            Gets the value of the unexpected token.
+            </summary>
+            <returns>The value of the unexpected token.</returns>
+        </member>
+        <member name="P:PartialResponse.Core.UnexpectedTokenError.Type">
+            <summary>
+            Gets the <see cref="T:PartialResponse.Core.TokenType"/> of the unexpected token.
+            </summary>
+            <returns>The <see cref="T:PartialResponse.Core.TokenType"/> of the unexpected token.</returns>
+        </member>
+        <member name="P:PartialResponse.Core.UnexpectedTokenError.Position">
+            <summary>
+            Gets the start position of the unexpected token.
+            </summary>
+            <returns>The start position of the unexpected token.</returns>
+        </member>
+    </members>
+</doc>

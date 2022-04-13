@@ -38,16 +38,7 @@
     <Property Name="soluongton" Type="Int32" />
     <Property Name="mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK__ChiTietDon__maSP__70DDC3D8" FromRole="SanPham" ToRole="ChiTietDonHang" />
-    <NavigationProperty Name="ThuongHieu" Relationship="Self.FK__SanPham__maTH__72C60C4A" FromRole="SanPham" ToRole="ThuongHieu" />
-  </EntityType>
-  <EntityType Name="ThuongHieu">
-    <Key>
-      <PropertyRef Name="maTH" />
-    </Key>
-    <Property Name="maTH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="tenTH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="hinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__maTH__72C60C4A" FromRole="ThuongHieu" ToRole="SanPham" />
+    <NavigationProperty Name="ThuongHieu1" Relationship="DienThoaiModel.FK__SanPham__maTH__7B5B524B" FromRole="SanPham" ToRole="ThuongHieu" />
   </EntityType>
   <Association Name="FK__ChiTietDo__madon__6FE99F9F">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
@@ -73,23 +64,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SanPham__maTH__72C60C4A">
-    <End Role="ThuongHieu" Type="Self.ThuongHieu" Multiplicity="0..1" />
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ThuongHieu">
-        <PropertyRef Name="maTH" />
-      </Principal>
-      <Dependent Role="SanPham">
-        <PropertyRef Name="maTH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="DienThoaiEntities7" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
     <EntitySet Name="DonHangs" EntityType="Self.DonHang" />
     <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
-    <EntitySet Name="ThuongHieux" EntityType="Self.ThuongHieu" />
     <AssociationSet Name="FK__ChiTietDo__madon__6FE99F9F" Association="Self.FK__ChiTietDo__madon__6FE99F9F">
       <End Role="DonHang" EntitySet="DonHangs" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
@@ -98,14 +76,15 @@
       <End Role="SanPham" EntitySet="SanPhams" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
     </AssociationSet>
-    <AssociationSet Name="FK__SanPham__maTH__72C60C4A" Association="Self.FK__SanPham__maTH__72C60C4A">
-      <End Role="ThuongHieu" EntitySet="ThuongHieux" />
-      <End Role="SanPham" EntitySet="SanPhams" />
-    </AssociationSet>
     <EntitySet Name="KhachHangs" EntityType="DienThoaiModel.KhachHang" />
     <AssociationSet Name="FK__DonHang__makh__71D1E811" Association="DienThoaiModel.FK__DonHang__makh__71D1E811">
       <End Role="KhachHang" EntitySet="KhachHangs" />
       <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <EntitySet Name="ThuongHieux" EntityType="DienThoaiModel.ThuongHieu" />
+    <AssociationSet Name="FK__SanPham__maTH__7B5B524B" Association="DienThoaiModel.FK__SanPham__maTH__7B5B524B">
+      <End Role="ThuongHieu" EntitySet="ThuongHieux" />
+      <End Role="SanPham" EntitySet="SanPhams" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="KhachHang">
@@ -131,6 +110,26 @@
       </Principal>
       <Dependent Role="DonHang">
         <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ThuongHieu">
+    <Key>
+      <PropertyRef Name="maTH" />
+    </Key>
+    <Property Name="maTH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenTH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPhams1" Relationship="DienThoaiModel.FK__SanPham__maTH__7B5B524B" FromRole="ThuongHieu" ToRole="SanPham" />
+  </EntityType>
+  <Association Name="FK__SanPham__maTH__7B5B524B">
+    <End Type="DienThoaiModel.ThuongHieu" Role="ThuongHieu" Multiplicity="0..1" />
+    <End Type="DienThoaiModel.SanPham" Role="SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThuongHieu">
+        <PropertyRef Name="maTH" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="maTH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

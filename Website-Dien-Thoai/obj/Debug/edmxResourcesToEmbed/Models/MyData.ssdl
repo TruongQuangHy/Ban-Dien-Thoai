@@ -53,7 +53,6 @@
     </Key>
     <Property Name="maTH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tenTH" Type="nvarchar" MaxLength="30" />
-    <Property Name="hinh" Type="varchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK__ChiTietDo__madon__6FE99F9F">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />

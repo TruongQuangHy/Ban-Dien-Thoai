@@ -39,7 +39,7 @@
             @Html.DisplayNameFor(model => model.FirstOrDefault().mota)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().ThuongHieu.tenTH)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().maTH)
         </th>
         <th></th>
     </tr>
@@ -50,6 +50,7 @@
             @Html.DisplayFor(modelItem => item.tenSP)
         </td>
         <td>
+            <img src="@item.hinh" />
             @Html.DisplayFor(modelItem => item.hinh)
         </td>
         <td>
@@ -65,7 +66,7 @@
             @Html.DisplayFor(modelItem => item.mota)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ThuongHieu.tenTH)
+            @Html.DisplayFor(modelItem => item.maTH)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.maSP }) |

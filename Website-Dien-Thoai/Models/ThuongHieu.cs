@@ -17,14 +17,13 @@ namespace Website_Dien_Thoai.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ThuongHieu()
         {
-            this.SanPhams = new HashSet<SanPham>();
+            this.SanPhams1 = new HashSet<SanPham>();
         }
     
         public int maTH { get; set; }
         public string tenTH { get; set; }
-        public string hinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SanPham> SanPhams { get; set; }
+        public virtual ICollection<SanPham> SanPhams1 { get; set; }
     }
 }

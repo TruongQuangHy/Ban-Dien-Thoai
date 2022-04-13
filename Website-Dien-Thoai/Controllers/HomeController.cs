@@ -15,9 +15,11 @@ namespace Website_Dien_Thoai.Controllers
         DienThoaiEntities7 db = new DienThoaiEntities7();
         public ActionResult Index()
         {
+
             HomeModel home = new HomeModel();
             home.listthuonghieu = db.ThuongHieux.ToList();
             home.listsanpham = db.SanPhams.ToList();
+
             return View(home);
         }
         

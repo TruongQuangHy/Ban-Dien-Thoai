@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PartialResponse.AspNetCore.Mvc.Formatters.Json</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Mvc.ControllerExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.AspNetCore.Mvc.ControllerBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ControllerExtensions.PartialJson(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+            <summary>
+            Creates a <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> object that serializes the specified <paramref name="data"/> object
+            to JSON.
+            </summary>
+            <param name="controller">The controller instance.</param>
+            <param name="data">The object to serialize.</param>
+            <returns>The created <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> that serializes the specified <paramref name="data"/>
+            to JSON format for the response.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.ControllerExtensions.PartialJson(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Creates a <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> object that serializes the specified <paramref name="data"/> object
+            to JSON.
+            </summary>
+            <param name="controller">The controller instance.</param>
+            <param name="data">The object to serialize.</param>
+            <param name="serializerSettings">The <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> to be used by
+            the formatter.</param>
+            <returns>The created <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> that serializes the specified <paramref name="data"/>
+            as JSON format for the response.</returns>
+            <remarks>Callers should cache an instance of <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> to avoid
+            recreating cached data with each call.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Mvc.PartialJsonResult">
+            <summary>
+            An action result which formats the given object as JSON.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.PartialJsonResult.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> class.
+            </summary>
+            <param name="value">The value to format as JSON.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.PartialJsonResult.#ctor(System.Object,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> class.
+            </summary>
+            <param name="value">The value to format as JSON.</param>
+            <param name="serializerSettings">The <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> to be used by
+            the formatter.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.PartialJsonResult.ContentType">
+            <summary>
+            Gets or sets the <see cref="T:Microsoft.Net.Http.Headers.MediaTypeHeaderValue"/> representing the Content-Type header of the response.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.PartialJsonResult.SerializerSettings">
+            <summary>
+            Gets or sets the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.PartialJsonResult.StatusCode">
+            <summary>
+            Gets or sets the HTTP status code.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.PartialJsonResult.Value">
+            <summary>
+            Gets or sets the value to be formatted.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.PartialJsonResult.ExecuteResultAsync(Microsoft.AspNetCore.Mvc.ActionContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Http.HttpRequestExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpRequestExtensions.BypassPartialResponse(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Indicates that partial response should be bypassed for the current request.
+            </summary>
+            <param name="request">The <see cref="T:Microsoft.AspNetCore.Http.HttpRequest"/>.</param>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.DefaultFieldsParser">
+            <summary>
+            Parses the fields parameter from the request.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.DefaultFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Parses the fields parameter from the request.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>The parsed fields.</returns>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult">
+            <summary>
+            Result of a <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/> operation.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.Fields">
+            <summary>
+            Gets a collection of fields if present; otherwise, null.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.IsFieldsSet">
+            <summary>
+            Gets a value indicating whether or not the <see cref="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.Fields"/> value has been set.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.HasError">
+            <summary>
+            Gets a value indicating whether the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/> operation had an error.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.Failed">
+            <summary>
+            Returns an <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult"/> indicating the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/>
+            operation failed.
+            </summary>
+            <returns>An <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult"/> indicating the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/>
+            operation failed i.e. with <see cref="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.HasError"/> <c>true</c>.
+            </returns>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.Success(PartialResponse.Core.Fields)">
+            <summary>
+            Returns an <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult"/> indicating the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/>
+            operation was successful.
+            </summary>
+            <param name="fields">The <see cref="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.Fields"/>.</param>
+            <returns>
+            An <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult"/> indicating the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/>
+            operation succeeded i.e. with <see cref="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.HasError"/> <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult.NoValue">
+            <summary>
+            Returns an <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult"/> indicating the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/>
+            operation produced no value.
+            </summary>
+            <returns>
+            An <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.FieldsParserResult"/> indicating the <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)"/>
+            operation produced no value.
+            </returns>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser">
+            <summary>
+            Parses the fields parameter from the request.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser.Parse(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Parses the fields parameter from the request.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>The parsed fields.</returns>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonArrayPool`1">
+            <summary>
+            Provides a resource pool that enables reusing instances of type T[].
+            </summary>
+            <typeparam name="T">The type of the objects that are in the resource pool.</typeparam>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonArrayPool`1.#ctor(System.Buffers.ArrayPool{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonArrayPool`1"/> class.
+            </summary>
+            <param name="inner">The inner resource pool.</param>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonArrayPool`1.Rent(System.Int32)">
+            <summary>
+            Retrieves a buffer that is at least the requested length.
+            </summary>
+            <param name="minimumLength">The minimum length of the array.</param>
+            <returns>An array of type T[] that is at least minimumLength in length.</returns>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonArrayPool`1.Return(`0[])">
+            <summary>
+            Returns an array to the pool that was previously obtained using the Rent method on the same
+            <see cref="T:System.Buffers.ArrayPool`1"/> instance.
+            </summary>
+            <param name="array">A buffer to return to the pool that was previously obtained using the Rent method.</param>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonSerializerExtensions">
+            <summary>
+            Provides a method for serializing objects to JSON.
+            </summary>
+            <remarks>This type supports the <see cref="T:PartialResponse.Core.Fields"/> infrastructure and is not intended to be used directly
+            from your code.</remarks>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.JsonSerializerExtensions.Serialize(Newtonsoft.Json.JsonSerializer,Newtonsoft.Json.JsonWriter,System.Object,System.Func{System.String,System.Boolean})">
+            <summary>
+            Serializes the specified <see cref="T:System.Object"/> and writes the JSON structure
+            using the specified <see cref="T:Newtonsoft.Json.JsonWriter"/>.
+            </summary>
+            <param name="jsonSerializer">The <see cref="T:Newtonsoft.Json.JsonSerializer"/> used to serialize the specified <see cref="T:System.Object"/>.</param>
+            <param name="jsonWriter">The <see cref="T:Newtonsoft.Json.JsonWriter"/> used to write the JSON structure.</param>
+            <param name="value">The <see cref="T:System.Object"/> to serialize.</param>
+            <param name="shouldSerialize">A <see cref="T:System.Func`2"/> that is called for every field in the
+            <see cref="T:System.Object"/> to serialize, indicating whether the field should be serialized.</param>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.MvcPartialJsonMvcOptionsSetup">
+            <summary>
+            Sets up JSON formatter options for <see cref="T:Microsoft.AspNetCore.Mvc.MvcOptions"/>.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.MvcPartialJsonMvcOptionsSetup.#ctor(PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser,Microsoft.Extensions.Options.IOptions{PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions},System.Buffers.ArrayPool{System.Char})">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.MvcPartialJsonMvcOptionsSetup"/> class.
+            </summary>
+            <param name="fieldsParser">The fields parser.</param>
+            <param name="partialJsonOptions">The options.</param>
+            <param name="charPool">The character array pool.</param>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.MvcPartialJsonMvcOptionsSetup.Configure(Microsoft.AspNetCore.Mvc.MvcOptions)">
+            <summary>
+            Configures the <see cref="T:Microsoft.AspNetCore.Mvc.MvcOptions"/> by adding the <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter"/>.
+            </summary>
+            <param name="options">The MVC options.</param>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor">
+            <summary>
+            Executes a <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> to write to the response.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor.#ctor(Microsoft.AspNetCore.Mvc.Infrastructure.IHttpResponseStreamWriterFactory,Microsoft.Extensions.Logging.ILogger{PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor},Microsoft.Extensions.Options.IOptions{PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions},PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser,System.Buffers.ArrayPool{System.Char})">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor"/> class.
+            </summary>
+            <param name="writerFactory">The <see cref="T:Microsoft.AspNetCore.Mvc.Infrastructure.IHttpResponseStreamWriterFactory"/>.</param>
+            <param name="logger">The <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/>.</param>
+            <param name="options">The <see cref="T:Microsoft.Extensions.Options.IOptions`1"/>.</param>
+            <param name="fieldsParser">The <see cref="F:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor.fieldsParser"/>.</param>
+            <param name="charPool">The <see cref="T:System.Buffers.ArrayPool`1"/> for creating <see cref="T:char[]"/> buffers.</param>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor.Logger">
+            <summary>
+            Gets the <see cref="T:Microsoft.Extensions.Logging.ILogger"/>.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor.Options">
+            <summary>
+            Gets the <see cref="T:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions"/>.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor.WriterFactory">
+            <summary>
+            Gets the <see cref="T:Microsoft.AspNetCore.Mvc.Infrastructure.IHttpResponseStreamWriterFactory"/>.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.Json.Internal.PartialJsonResultExecutor.ExecuteAsync(Microsoft.AspNetCore.Mvc.ActionContext,Microsoft.AspNetCore.Mvc.PartialJsonResult)">
+            <summary>
+            Executes the <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/> and writes the response.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.ActionContext"/>.</param>
+            <param name="result">The <see cref="T:Microsoft.AspNetCore.Mvc.PartialJsonResult"/>.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> which will complete when writing has completed.</returns>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.JsonSerializerSettingsProvider">
+            <summary>
+            Helper class which provides <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.JsonSerializerSettingsProvider.CreateSerializerSettings">
+            <summary>
+            Creates default <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+            <returns>Default <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</returns>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter">
+            <summary>
+            A <see cref="T:Microsoft.AspNetCore.Mvc.Formatters.TextOutputFormatter"/> for JSON content.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter.#ctor(Newtonsoft.Json.JsonSerializerSettings,PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser,System.Buffers.ArrayPool{System.Char},PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter"/> class.
+            </summary>
+            <param name="serializerSettings">
+            The <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>. Should be either the application-wide settings
+            (<see cref="P:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions.SerializerSettings"/>) or an instance
+            <see cref="M:PartialResponse.AspNetCore.Mvc.Formatters.JsonSerializerSettingsProvider.CreateSerializerSettings"/> initially returned.
+            </param>
+            <param name="fieldsParser">The <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.Json.IFieldsParser"/>.</param>
+            <param name="charPool">The <see cref="T:System.Buffers.ArrayPool`1"/>.</param>
+            <param name="options">The <see cref="T:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions"/>.</param>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter.SerializerSettings">
+            <summary>
+            Gets the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> used to configure the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+            <remarks>
+            Any modifications to the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> object after this
+            <see cref="T:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter"/> has been used will have no effect.
+            </remarks>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter.WriteResponseBodyAsync(Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterWriteContext,System.Text.Encoding)">
+            <inheritdoc />
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter.CreateJsonWriter(System.IO.TextWriter)">
+            <summary>
+            Called during serialization to create the <see cref="T:Newtonsoft.Json.JsonWriter"/>.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.TextWriter"/> used to write.</param>
+            <returns>The <see cref="T:Newtonsoft.Json.JsonWriter"/> used during serialization.</returns>
+        </member>
+        <member name="M:PartialResponse.AspNetCore.Mvc.Formatters.PartialJsonOutputFormatter.CreateJsonSerializer">
+            <summary>
+            Called during serialization to create the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+            <returns>The <see cref="T:Newtonsoft.Json.JsonSerializer"/> used during serialization and deserialization.</returns>
+        </member>
+        <member name="T:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions">
+            <summary>
+            Provides programmatic configuration for JSON in the MVC framework.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions.IgnoreCase">
+            <summary>
+            Gets or sets a value indicating whether partial response allows case-insensitive matching.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions.IgnoreParseErrors">
+            <summary>
+            Gets or sets a value indicating whether fields parse errors should be ignored or return a 400 status code.
+            </summary>
+        </member>
+        <member name="P:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions.SerializerSettings">
+            <summary>
+            Gets the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> that are used by this application.
+            </summary>
+        </member>
+        <member name="T:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcBuilderExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcBuilderExtensions.AddPartialJsonFormatters(Microsoft.Extensions.DependencyInjection.IMvcBuilder)">
+            <summary>
+            Adds services to the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</param>
+            <returns>A reference to the current instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</returns>
+        </member>
+        <member name="M:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcBuilderExtensions.AddPartialJsonFormatters(Microsoft.Extensions.DependencyInjection.IMvcBuilder,System.Action{Newtonsoft.Json.JsonSerializerSettings})">
+            <summary>
+            Adds services to the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and the <paramref name="setupAction"/> to configure
+            the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</param>
+            <param name="setupAction">An action to configure the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</param>
+            <returns>A reference to the current instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</returns>
+        </member>
+        <member name="M:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcBuilderExtensions.AddPartialJsonOptions(Microsoft.Extensions.DependencyInjection.IMvcBuilder,System.Action{PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions})">
+            <summary>
+            Adds the <paramref name="setupAction"/> to configure the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</param>
+            <param name="setupAction">An action to configure the <see cref="T:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions"/>.</param>
+            <returns>A reference to the current instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcBuilder"/>.</returns>
+        </member>
+        <member name="T:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcCoreBuilderExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="M:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcCoreBuilderExtensions.AddPartialJsonFormatters(Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder)">
+            <summary>
+            Adds services to the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/>.</param>
+            <returns>A reference to the current instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/>.</returns>
+        </member>
+        <member name="M:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcCoreBuilderExtensions.AddPartialJsonFormatters(Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder,System.Action{Newtonsoft.Json.JsonSerializerSettings})">
+            <summary>
+            Adds services to the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and the <paramref name="setupAction"/> to configure
+            the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/>.</param>
+            <param name="setupAction">An action to configure the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</param>
+            <returns>A reference to the current instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/>.</returns>
+        </member>
+        <member name="M:PartialResponse.Extensions.DependencyInjection.MvcPartialJsonMvcCoreBuilderExtensions.AddPartialJsonOptions(Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder,System.Action{PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions})">
+            <summary>
+            Adds the <paramref name="setupAction"/> to configure the <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/>.</param>
+            <param name="setupAction">An action to configure the <see cref="T:PartialResponse.AspNetCore.Mvc.MvcPartialJsonOptions"/>.</param>
+            <returns>A reference to the current instance of <see cref="T:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder"/>.</returns>
+        </member>
+    </members>
+</doc>
